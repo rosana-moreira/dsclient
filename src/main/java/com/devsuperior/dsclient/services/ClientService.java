@@ -46,7 +46,7 @@ public class ClientService {
     }
 
     @Transactional
-    public ClientDTO update( Long id, ClientDTO dto) {
+    public ClientDTO update(Long id, ClientDTO dto) {
         try {
             Client entity = repository.getReferenceById(id);
             copyDtoEntity(dto, entity);
@@ -56,6 +56,7 @@ public class ClientService {
             throw new ResourceNotFoundException("Id not found" + id);
         }
     }
+
     @Transactional
     public void delete(Long id) {
         try {
